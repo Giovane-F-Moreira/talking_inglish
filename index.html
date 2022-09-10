@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id='input_word'/> <button onclick="talk(document.getElementById('input_word').value)"> falar palavra completa </button>
+  <button onclick="talk_words(document.getElementById('input_word').value)"> Soletrar </button>
+  <button onclick="generate_word_talk()"> Generate and talk</button>
+  <button onclick="generate_word_talk_words()"> Generate and talk word</button>
+  <script>
+
+    function generate_word_talk(){
+      let url = "https://random-word-api.herokuapp.com/word";
+
+      let xhttp = new XMLHttpRequest();
+      xhttp.open("GET", url, false);
+      xhttp.send();//A execução do script pára aqui até a requisição retornar do servidor
+
+      let object = xhttp.responseText;
+
+      let string = JSON.stringify(object);
+      result = string.substring(4,(string.length-4))
+      alert(result)
+      talk(result)
+    }
+
+    function generate_word_talk_words(){
+      let url = "https://random-word-api.herokuapp.com/word";
+
+      let xhttp = new XMLHttpRequest();
+      xhttp.open("GET", url, false);
+      xhttp.send();//A execução do script pára aqui até a requisição retornar do servidor
+
+      let object = xhttp.responseText;
+
+      let string = JSON.stringify(object);
+      result = string.substring(4,(string.length-4))
+      alert(result)
+      talk(result)
+      talk_words(result)
+    }
+
+    function talk(word){
+      var msg = new SpeechSynthesisUtterance();
+      msg.lang = 'en-EUA';
+      msg.text = word;
+      window.speechSynthesis.speak(msg);
+    }
+
+    function talk_words(word){
+      let str = word;
+      let array_word = str. split('');
+      let cont = array_word.length
+      for(let i=0; i < cont; i++){
+        let msg = new SpeechSynthesisUtterance();
+        msg.lang = 'en-EUA';
+        msg.text = array_word[i];
+        window.speechSynthesis.speak(msg);
+      }
+    }
+  </script>
+</body>
+</html>
