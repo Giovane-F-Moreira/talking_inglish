@@ -4,13 +4,103 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  
+  <!-- Font Awesome -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- MDB -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css">
+  <title>Talking Inglish</title>
 </head>
+
 <body>
-  <input type="text" id='input_word'/> <button onclick="talk(document.getElementById('input_word').value)"> falar palavra completa </button>
-  <button onclick="talk_words(document.getElementById('input_word').value)"> Soletrar </button>
-  <button onclick="generate_word_talk()"> Generate and talk</button>
-  <button onclick="generate_word_talk_words()"> Generate and talk word</button>
+  <div class="container">
+    <div class="box">
+      <div class="conteudo">
+        <h1>Talking Inglish</h1>
+        <div class="row">
+          <div class="col-12">
+            <div class="form-outline">
+              <i class="fas fa-keyboard trailing"></i>
+              <input type="text" id="input_word" class="form-control form-icon-trailing" />
+              <label class="form-label" for="form1">Write the word</label>
+            </div><br>
+          </div>
+  
+          <div class="col-6">
+            <button 
+              type="button" 
+              class="btn btn-outline-success" 
+              onclick="talk(document.getElementById('input_word').value)"
+            >
+              Talk Word
+            </button>
+          </div>
+          <div class="col-6">
+            <button 
+              type="button" 
+              class="btn btn-outline-success"
+              onclick="spell_words(document.getElementById('input_word').value)"
+            >
+              Spell Word
+            </button>
+          </div><br>
+        </div>
+
+        <hr>
+
+        <h2>Random words</h2>
+        <h3 id="random_word">Word</h3>
+        <div class="row">
+          <div class="col-6">
+            <button 
+              type="button" 
+              class="btn btn-outline-primary" 
+              onclick="generate_word_talk()"
+            >
+              Generate Word
+            </button>
+          </div>
+          <div class="col-6">
+            <button 
+              type="button" 
+              class="btn btn-outline-primary"
+              onclick="generate_word_talk_words()"
+            >
+              Generate and Spell
+            </button>
+          </div><br>
+        </div>
+
+        <hr>
+        <h2>Random letters or numbers</h2>
+        <h3 id="random_letters_numbers">Letters</h3>
+        <div class="row">
+          <div class="col-12">
+            <button 
+              type="button" 
+              class="btn btn-outline-primary"
+              onclick="generate_letters()"
+            >
+              Generate and talk
+            </button>
+          </div><br>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
 
     function generate_word_talk(){
@@ -24,7 +114,7 @@
 
       let string = JSON.stringify(object);
       result = string.substring(4,(string.length-4))
-      alert(result)
+      document.getElementById('random_word').innerHTML = result
       talk(result)
     }
 
@@ -39,9 +129,29 @@
 
       let string = JSON.stringify(object);
       result = string.substring(4,(string.length-4))
-      alert(result)
+      document.getElementById('random_word').innerHTML = result
       talk(result)
-      talk_words(result)
+      spell_words(result)
+    }
+
+    function generate_letters(){
+      const alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9"];
+
+      let total = 1;
+      const numbers = [];
+      const maxValue = 36;
+
+      while (total > 0) {
+        const number = Math.floor(Math.random() * maxValue);
+        if (!numbers.includes(number)) {
+          numbers.push(number)
+          total -= 1
+        }
+      }
+
+      let sorted = alphabet[numbers].toUpperCase()
+      document.getElementById('random_letters_numbers').innerHTML = sorted
+      talk(sorted);
     }
 
     function talk(word){
@@ -51,7 +161,7 @@
       window.speechSynthesis.speak(msg);
     }
 
-    function talk_words(word){
+    function spell_words(word){
       let str = word;
       let array_word = str. split('');
       let cont = array_word.length
@@ -63,5 +173,10 @@
       }
     }
   </script>
+  <!-- MDB -->
+  <script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"
+  ></script>
 </body>
 </html>
