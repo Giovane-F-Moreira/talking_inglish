@@ -38,65 +38,63 @@
             </div><br>
           </div>
   
-          <div class="col-6">
-            <button 
-              type="button" 
-              class="btn btn-outline-success" 
-              onclick="talk(document.getElementById('input_word').value)"
-            >
-              Talk Word
-            </button>
-          </div>
-          <div class="col-6">
-            <button 
-              type="button" 
-              class="btn btn-outline-success"
-              onclick="spell_words(document.getElementById('input_word').value)"
-            >
-              Spell Word
-            </button>
-          </div><br>
+          <button 
+            type="button" 
+            class="btn btn-outline-success" 
+            onclick="talk(document.getElementById('input_word').value)"
+          >
+            Talk Word
+          </button>
+         
+          <button 
+            type="button" 
+            class="btn btn-outline-success"
+            onclick="spell_words(document.getElementById('input_word').value)"
+          >
+            Spell Word
+          </button>
+
+          <br>
         </div>
 
         <hr>
 
         <h2>Random words</h2>
         <h3 id="random_word">Word</h3>
-        <div class="row">
-          <div class="col-6">
-            <button 
-              type="button" 
-              class="btn btn-outline-primary" 
-              onclick="generate_word_talk()"
-            >
-              Generate Word
-            </button>
-          </div>
-          <div class="col-6">
-            <button 
-              type="button" 
-              class="btn btn-outline-primary"
-              onclick="generate_word_talk_words()"
-            >
-              Generate and Spell
-            </button>
-          </div><br>
-        </div>
+        
+        <button 
+          type="button" 
+          class="btn btn-outline-primary" 
+          onclick="generate_word_talk()"
+        >
+          Generate Word
+        </button>
+      
+        <br>
+      
+        <button 
+          type="button" 
+          class="btn btn-outline-primary"
+          onclick="generate_word_talk_words()"
+        >
+          Generate and Spell
+        </button>
 
+        <br>
+        
         <hr>
         <h2>Random letters or numbers</h2>
         <h3 id="random_letters_numbers">Letters</h3>
-        <div class="row">
-          <div class="col-12">
-            <button 
-              type="button" 
-              class="btn btn-outline-primary"
-              onclick="generate_letters()"
-            >
-              Generate and talk
-            </button>
-          </div><br>
-        </div>
+          
+        <button 
+          type="button" 
+          class="btn btn-outline-primary"
+          onclick="generate_letters()"
+        >
+          Generate and talk
+        </button>
+        <br>
+        
       </div>
     </div>
   </div>

@@ -4,7 +4,6 @@
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Giovane-F-Moreira/Talking_inglish) ![GitHub repo file count](https://img.shields.io/github/directory-file-count/Giovane-F-Moreira/Talking_inglish) ![Lines of code](https://tokei.rs/b1/github/Giovane-F-Moreira/Talking_inglish) ![GitHub language count](https://img.shields.io/github/languages/count/Giovane-F-Moreira/Talking_inglish) ![GitHub top language](https://img.shields.io/github/languages/top/Giovane-F-Moreira/Talking_inglish) ![GitHub last commit](https://img.shields.io/github/last-commit/Giovane-F-Moreira/Talking_inglish) ![GitHub forks](https://img.shields.io/github/forks/Giovane-F-Moreira/Talking_inglish) ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/Giovane-F-Moreira/Talking_inglish)![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/Giovane-F-Moreira/Talking_inglish) ![GitHub followers](https://img.shields.io/github/followers/Giovane-F-Moreira?label=Follow)
 
-
 > Este projeto visa ajudar na pronuncia da lingua inglesa.
 
 ### Ajustes e melhorias
@@ -12,7 +11,9 @@
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 - [X] Desenvolver a base do código
-- [ ] Remodular todo o front-end
+- [X] Remodular todo o front-end
+- [ ] Adicionar checkbox para alterar entre letras e numeros
+- [ ] Verificar se o campo é vazio
 
 ## 💻 Pré-requisitos
 
@@ -92,7 +93,6 @@ Como alternativa, consulte a documentação do GitHub em [como criar uma solicit
     </td>
   </tr>
 </table>
-
 
 ## 😄 Seja um dos contribuidores
 
