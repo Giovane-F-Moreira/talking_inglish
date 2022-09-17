@@ -11,13 +11,13 @@
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 - [X] Desenvolver a base do código
-- [X] Remodular todo o front-end
+- [ ] Remodular todo o front-end
 - [ ] Adicionar checkbox para alterar entre letras e numeros
 - [ ] Verificar se o campo é vazio
 
 ## 💻 Pré-requisitos
 
-Este projeto não possui nenhum pré-requisito.
+Para Executar este projeto é necessario ter instalado o NodeJs v16, o NPM v8, e algum emulador do sistema operacional android.
 
 <!--Antes de começar, verifique se você atendeu aos seguintes requisitos:
 -Estes são apenas requisitos de exemplo. Adicionar, duplicar ou remover conforme necessário--->
@@ -42,6 +42,8 @@ Windows:
 --->
 
 ## 🚀 Utilizando o Talking Inglish
+
+Atualmente o projeto inicial para desktop se encontra operativo em sua fase beta, e o aplicativo está em fase de desenvolvimento.
 
 Para utilizar o Talking Inglish, basta acessar a seguinte url:
 
